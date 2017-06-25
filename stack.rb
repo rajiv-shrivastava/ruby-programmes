@@ -1,47 +1,38 @@
 class My_stack
 	
-		@@arr = []
+		@@stack = []
 
 		def push(data)
-			if @@arr.length == 0
-				 @@arr[0] = data
+			if @@stack.length == 0
+				 @@stack[0] = data
 			else
-				len = @@arr.length
-				@@arr[len] = data
+				len = @@stack.length
+				@@stack[len] = data
 			end
 		end
 
 		def pop
-			if @@arr.length < 1
+			if @@stack.length < 1
 				puts "stack underflow"
 			else
-				len = @@arr.length
-				@@arr.delete_at(1)
+				len = @@stack.length
+				@@stack.delete_at(1)
 			end
 		end
 
 
-		def print_array
-			puts @@arr
+		def print_stack
+			puts @@stack
 		end
 end
 
-    demo  = My_stack.new
+    stack_obj  = My_stack.new
 
-    demo.push(1)
+    stack_obj.push(1,2,3)
+    stack_obj.pop
+    stack_obj.push(4,5)
 
-    demo.push(2)
+    puts "Print the stack"
 
-
-    demo.push(3)
-
-    demo.pop
-
-    demo.push(4)
-
-    demo.push(5)
-
-    puts " "
-
-    demo.print_array
+    stack_obj.print_stack
 
